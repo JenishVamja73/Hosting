@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "313758566927",
+    "project_id": "hosting49598",
+    "storage_bucket": "hosting49598.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313758566927:android:85dc2ffc277f094079717a",
+        "android_client_info": {
+          "package_name": "com.hosting"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9qTgmIGTB6W8atKq79QuHdfOlZembyzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
