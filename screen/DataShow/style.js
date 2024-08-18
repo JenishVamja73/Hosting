@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   AddView: {
     position: 'absolute',
-    bottom: "15%",
+    bottom: "20%",
     right: 20,
   },
   AddButton: {

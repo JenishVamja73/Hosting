@@ -5,13 +5,14 @@ import axios from 'axios';
 import React, { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, Appearance, Pressable, Text, TouchableOpacity, View } from 'react-native';
 import BackgroundService from 'react-native-background-actions';
-// import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
 import { SwipeListView } from 'react-native-swipe-list-view';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from './style';
+import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+
+const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-8455070538083358/3439377784';
 
 
-// const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-xxxxxxxxxxxxx/yyyyyyyyyyyyyy';
 
 const DataShow = () => {
     const route = useRoute();
@@ -202,6 +203,7 @@ const DataShow = () => {
 
     return (
         <View style={styles.conter}>
+            
 
 
             <SwipeListView
@@ -253,7 +255,15 @@ const DataShow = () => {
                     <AntDesign name="plus" size={30} color="white" />
                 </Pressable>
             </View>
-
+            <BannerAd
+                unitId={adUnitId}
+                size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+                requestOptions={{
+                    networkExtras: {
+                        collapsible: 'bottom',
+                    },
+                }}
+            />
         </View>
     );
 };

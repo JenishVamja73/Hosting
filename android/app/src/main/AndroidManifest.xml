@@ -1,4 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"     xmlns:tools="http://schemas.android.com/tools"     package="com.hosting">
 
      <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -11,14 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:allowBackup="false"
         android:theme="@style/AppTheme">
+          <property
+            android:name="android.adservices.AD_SERVICES_CONFIG"
+            android:resource="@xml/gma_ad_services_config"
+            tools:replace="android:resource" />
         <meta-data android:name="com.dieam.reactnativepushnotification.notification_foreground"
             android:value="false" />
         <!-- Change the resource name to your App's accent color - or any other color you want -->
         <meta-data android:name="com.dieam.reactnativepushnotification.notification_color"
             android:resource="@color/white" /> <!-- or @android:color/{name} to use a standard color -->
-            <meta-data
+       <meta-data
         android:name="com.google.android.gms.ads.APPLICATION_ID"
-        android:value="ca-app-pub-3940256099942544/6300978111"/>
+        android:value="ca-app-pub-8455070538083358~8117021213"
+        tools:replace="android:value"/>
 
     
 
