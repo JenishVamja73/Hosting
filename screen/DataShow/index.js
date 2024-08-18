@@ -2,13 +2,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import analytics from '@react-native-firebase/analytics';
 import { useFocusEffect, useNavigation, useRoute } from '@react-navigation/native';
 import axios from 'axios';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState,useRef } from 'react';
 import { ActivityIndicator, Appearance, Pressable, Text, TouchableOpacity, View } from 'react-native';
 import BackgroundService from 'react-native-background-actions';
 import { SwipeListView } from 'react-native-swipe-list-view';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from './style';
-import { BannerAd, BannerAdSize, TestIds } from 'react-native-google-mobile-ads';
+import { BannerAd, BannerAdSize, TestIds,useForeground  } from 'react-native-google-mobile-ads';
 
 const adUnitId = __DEV__ ? TestIds.ADAPTIVE_BANNER : 'ca-app-pub-8455070538083358/3439377784';
 
@@ -26,6 +26,10 @@ const DataShow = () => {
     useEffect(() => {
         console.log('Route params:', route.params);
     }, [route.params]);
+    const bannerRef = useRef<BannerAd>(null);
+    useForeground(() => {
+        Platform.OS === 'android' && bannerRef.current?.load();
+      })
 
     useEffect(() => {
         const initialize = async () => {
