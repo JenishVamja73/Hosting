@@ -204,7 +204,15 @@ const DataShow = () => {
     return (
         <View style={styles.conter}>
             
-
+            <BannerAd
+                unitId={adUnitId}
+                size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
+                requestOptions={{
+                    networkExtras: {
+                        collapsible: 'bottom',
+                    },
+                }}
+            />
 
             <SwipeListView
                 data={savedWebsites}
@@ -255,15 +263,7 @@ const DataShow = () => {
                     <AntDesign name="plus" size={30} color="white" />
                 </Pressable>
             </View>
-            <BannerAd
-                unitId={adUnitId}
-                size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-                requestOptions={{
-                    networkExtras: {
-                        collapsible: 'bottom',
-                    },
-                }}
-            />
+           
         </View>
     );
 };
